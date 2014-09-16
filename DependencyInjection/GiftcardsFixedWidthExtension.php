@@ -33,7 +33,7 @@ class GiftcardsFixedWidthExtension extends Extension
             $dirs[] = $path;
         }
 
-        // register bundles as Twig namespaces
+        // register bundles as fixed width directories
         foreach ($container->getParameter('kernel.bundles') as $bundle => $class) {
             if (is_dir($dir = $container->getParameter('kernel.root_dir').'/Resources/'.$bundle.'/fixed_width')) {
 

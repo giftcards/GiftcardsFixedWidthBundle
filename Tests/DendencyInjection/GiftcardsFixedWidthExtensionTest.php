@@ -27,6 +27,8 @@ class GiftcardsFixedWidthExtensionTest extends TestCase
     public function testLoad()
     {
         $container = new ContainerBuilder();
+        $container->setParameter('kernel.bundles', array());
+        $container->setParameter('kernel.root_dir', __DIR__);
         $this->extension->load(array(), $container);
         $this->assertContains(
             new FileResource(__DIR__.'/../../Resources/config/services.yml'),
