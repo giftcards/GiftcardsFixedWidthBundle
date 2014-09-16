@@ -1,7 +1,7 @@
 parameters:
     giftcards.fixed_width.spec_loader.class: Giftcards\FixedWidth\Spec\Loader\YamlSpecLoader
     giftcards.fixed_width.spec_file_locator.class: Symfony\Component\Config\FileLocator
-    giftcards.fixed_width.file_factory.class: Giftcards\FixedWidth\FileFactory
+    giftcards.fixed_width.file_factory.class: Giftcards\FixedWidth\Spec\FileFactory
     giftcards.fixed_width.sprintf_value_formatter.class: Giftcards\FixedWidth\Spec\ValueFormatter\SprintfValueFormatter
     giftcards.fixed_width.spec_file_dirs: []
 

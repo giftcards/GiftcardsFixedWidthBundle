@@ -34,7 +34,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('value_formatter_id')
                     ->cannotBeEmpty()
-                    ->defaultValue('giftcards.fixed_width.sprintf_value_formatter.class')
+                    ->defaultValue('giftcards.fixed_width.sprintf_value_formatter')
                 ->end()
             ->end()
         ;
