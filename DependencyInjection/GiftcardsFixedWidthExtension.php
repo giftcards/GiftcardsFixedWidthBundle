@@ -4,6 +4,7 @@ namespace Giftcards\FixedWidthBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
@@ -52,5 +53,10 @@ class GiftcardsFixedWidthExtension extends Extension
         }
 
         $container->setParameter('giftcards.fixed_width.spec_file_dirs', $dirs);
+        $container
+            ->getDefinition('giftcards.fixed_width.file_factory')
+            ->replaceArgument(0, new Reference($config['spec_loader']['id']))
+            ->replaceArgument(1, new Reference($config['value_formatter_id']))
+        ;
     }
 }
