@@ -2,7 +2,7 @@
 	"name": "giftcards/fixed-width-bundle",
 	"require": {
 		"symfony/symfony": "~2.3",
-        "giftcards/fixed-width": "dev-master"
+        "giftcards/fixed-width": "~1.0"
 	},
     "require-dev": {
         "mockery/mockery": "@dev",
