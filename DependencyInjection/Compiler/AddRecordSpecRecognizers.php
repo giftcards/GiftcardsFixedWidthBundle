@@ -35,7 +35,7 @@ class AddRecordSpecRecognizers implements CompilerPassInterface
 
                 $fileFactory->addMethodCall(
                     'addRecordSpecRecognizer',
-                    [$tag['spec_name'], new Reference($id)]
+                    array($tag['spec_name'], new Reference($id))
                 );
             }
         }
