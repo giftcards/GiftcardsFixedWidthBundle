@@ -9,12 +9,12 @@
 namespace Giftcards\FixedWidthBundle\Tests\DependencyInjection;
 
 
+use Giftcards\FixedWidth\Tests\TestCase;
 use Giftcards\FixedWidthBundle\DependencyInjection\GiftcardsFixedWidthExtension;
-use Omni\TestingBundle\TestCase\Extension\AbstractExtendableTestCase;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class GiftcardsFixedWidthExtensionTest extends AbstractExtendableTestCase
+class GiftcardsFixedWidthExtensionTest extends TestCase
 {
     /** @var  GiftcardsFixedWidthExtension */
     protected $extension;
