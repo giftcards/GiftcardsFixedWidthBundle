@@ -1,0 +1,21 @@
+parameters:
+    giftcards.fixed_width.spec_loader.class: Giftcards\FixedWidth\Spec\Loader\YamlSpecLoader
+    giftcards.fixed_width.spec_file_locator.class: Symfony\Component\Config\FileLocator
+    giftcards.fixed_width.file_factory.class: Giftcards\FixedWidth\FileFactory
+    giftcards.fixed_width.spec_file_dirs: []
+
+services:
+    giftcards.fixed_width.spec_loader:
+        class: %giftcards.fixed_width.spec_loader.class%
+        arguments:
+            - @giftcards.fixed_width.spec_file_locator
+
+    giftcards.fixed_width.spec_file_locator:
+        class: %giftcards.fixed_width.spec_file_locator.class%
+        arguments:
+            - %giftcards.fixed_width.spec_file_dirs%
+
+    giftcards.fixed_width.file_factory:
+        class: %giftcards.fixed_width.file_factory.class%
+        arguments:
+            - @giftcards.fixed_width.spec_loader
