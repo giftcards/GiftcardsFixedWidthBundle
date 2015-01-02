@@ -1,4 +1,4 @@
-GiftcardsFixedWidthBundle
+GiftcardsFixedWidthBundle [![Build Status](https://travis-ci.org/giftcards/GiftcardsFixedWidthBundle.svg?branch=master)](https://travis-ci.org/giftcards/GiftcardsFixedWidthBundle)
 =========================
 
 Bundle that integrates the [fixed width library](https://github.com/giftcards/FixedWidth) into symfony
