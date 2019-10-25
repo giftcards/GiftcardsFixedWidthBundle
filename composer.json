@@ -1,8 +1,8 @@
 {
 	"name": "giftcards/fixed-width-bundle",
 	"require": {
-		"symfony/symfony": "~2.3",
-        "giftcards/fixed-width": "~1.0"
+		"symfony/symfony": "~3.4",
+        "giftcards/fixed-width": "~1.5"
 	},
     "require-dev": {
         "mockery/mockery": "@dev",
