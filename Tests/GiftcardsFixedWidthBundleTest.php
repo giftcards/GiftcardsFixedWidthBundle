@@ -22,6 +22,11 @@ class GiftcardsFixedWidthBundleTest extends TestCase
         $this->bundle = new GiftcardsFixedWidthBundle();
     }
 
+    public function tearDown()
+    {
+        \Mockery::close();
+    }
+
     public function testBuild()
     {
         $this->bundle->build(
@@ -33,4 +38,3 @@ class GiftcardsFixedWidthBundleTest extends TestCase
         );
     }
 }
- 

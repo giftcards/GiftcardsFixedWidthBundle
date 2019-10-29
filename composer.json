@@ -2,11 +2,12 @@
 	"name": "giftcards/fixed-width-bundle",
 	"require": {
 		"symfony/symfony": "~3.4",
-        "giftcards/fixed-width": "~1.5"
+        "giftcards/fixed-width": "1.5.1"
 	},
     "require-dev": {
         "mockery/mockery": "@dev",
-        "fzaninotto/faker": "~1.3"
+        "fzaninotto/faker": "~1.3",
+        "phpunit/phpunit": "^4.0"
     },
     "autoload": {
         "psr-0": {
