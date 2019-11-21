@@ -19,7 +19,7 @@ class GiftcardsFixedWidthExtensionTest extends TestCase
     /** @var  GiftcardsFixedWidthExtension */
     protected $extension;
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->extension = new GiftcardsFixedWidthExtension();
     }
@@ -27,18 +27,14 @@ class GiftcardsFixedWidthExtensionTest extends TestCase
     public function testLoad()
     {
         $container = new ContainerBuilder();
-        $container->setParameter('kernel.bundles', array(
+        $container->setParameter('kernel.bundles', [
                 'GiftcardsFixedWidthBundle' => 'Giftcards\FixedWidthBundle\GiftcardsFixedWidthBundle'
-            ));
+        ]);
         $container->setParameter('kernel.root_dir', realpath(__DIR__.'/../../'));
-        $this->extension->load(array(), $container);
-        $this->assertContains(
+        $this->extension->load([], $container);
+        $this->assertContainsEquals(
             new FileResource(__DIR__.'/../../Resources/config/services.yml'),
-            $container->getResources(),
-            '',
-            false,
-            false
+            $container->getResources()
         );
     }
 }
- 

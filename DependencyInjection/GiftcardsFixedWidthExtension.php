@@ -2,6 +2,7 @@
 
 namespace Giftcards\FixedWidthBundle\DependencyInjection;
 
+use ReflectionClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Reference;
@@ -26,7 +27,7 @@ class GiftcardsFixedWidthExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $dirs = array();
+        $dirs = [];
 
         foreach ($config['spec_loader']['paths'] as $path) {
 
@@ -40,7 +41,7 @@ class GiftcardsFixedWidthExtension extends Extension
                 $dirs[] = $dir;
             }
 
-            $reflection = new \ReflectionClass($class);
+            $reflection = new ReflectionClass($class);
             if (is_dir($dir = dirname($reflection->getFilename()).'/Resources/fixed_width')) {
 
                 $dirs[] = $dir;

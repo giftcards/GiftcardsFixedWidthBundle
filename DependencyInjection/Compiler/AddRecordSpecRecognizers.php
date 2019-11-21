@@ -9,6 +9,7 @@
 namespace Giftcards\FixedWidthBundle\DependencyInjection\Compiler;
 
 
+use RuntimeException;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -30,12 +31,12 @@ class AddRecordSpecRecognizers implements CompilerPassInterface
 
                 if (!isset($tag['spec_name'])) {
 
-                    throw new \RuntimeException('the tag giftcards.fixed_width.record_spec_recognizer must have a spec_name parameter.');
+                    throw new RuntimeException('the tag giftcards.fixed_width.record_spec_recognizer must have a spec_name parameter.');
                 }
 
                 $fileFactory->addMethodCall(
                     'addRecordSpecRecognizer',
-                    array($tag['spec_name'], new Reference($id))
+                    [$tag['spec_name'], new Reference($id)]
                 );
             }
         }
